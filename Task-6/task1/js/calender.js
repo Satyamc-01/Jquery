@@ -111,8 +111,8 @@ $(document).ready(function () {
         x = currentmonth.indexOf($("#gomonth").val());
         $("#godate").find("option").remove();
         totdays = new Date($("#goyear").val(), x + 1, 0).getDate();
-        for (var k = 0; k <= totdays; k++) {
-            if (k == 0) {
+        for (var k = 1; k <= totdays; k++) {
+            if (k == 1) {
                 $("#godate").append(`<option>Date</option>`)
             }
             $("#godate").append(`<option value="${k}">${k}</option>`)
