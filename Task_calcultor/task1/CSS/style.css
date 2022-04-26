@@ -50,7 +50,13 @@ button#equals {
 input[type="text"]{
   font-size: 24px;
   width: 99%;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
+}
+p{
+  margin: 0 auto;
+}
+.err{
+  height: 30px;
 }
 /* button#delete {
   padding: 18px 29px;

@@ -3,10 +3,12 @@ $(document).ready(function () {
     var new_str = ""
     $("#calculate").focus()
     $("body").click(function () {
-        
+
         $("#calculate").focus()
     })
     $("button").click(function () {
+        $(".error").text(" ")
+
         // $("#calculate").focus()
         x = $("#calculate").val();
         if (($(this).attr("id") != "equals") && ($(this).attr("id") != "multiply") && ($(this).attr("id") != "root") && ($(this).attr("id") != "square")) {
@@ -51,17 +53,18 @@ $(document).ready(function () {
                 answer = eval(b)
                 new_str = "";
                 $("#calculate").val(answer);
+
+
             }
             catch (error) {
                 if (error instanceof SyntaxError) {
-                    $("#calculate").val("Error in Syntax");
+                    $(".error").text("Error in Syntax");
                 } else if (error instanceof ReferenceError) {
-                    $("#calculate").val("NO Reference");
+                    $(".error").text(" Malformed expression");
                 } else if (error instanceof TypeError) {
-                    $("#calculate").val("Type Error ");
+                    $(".error").text(" Malformed expression");
                 } else {
-                    $("#calculate").val(error);
-
+                    $(".error").text(error);
                 }
             }
 
@@ -70,14 +73,41 @@ $(document).ready(function () {
     $("#calculate").keydown(function (e) {
         // $("#calculate").focus()
         if (e.keyCode == 13) {
-            new_str = $("#calculate").val();
-            answer = eval(new_str);
-            x = "";
-            $("#calculate").val(answer);
+            try {
+                new_str = $("#calculate").val();
+                answer = eval(new_str);
+                x = "";
+                $("#calculate").val(answer);
+            }
+            catch (error) {
+                if (error instanceof SyntaxError) {
+                    $(".error").text("Error in Syntax");
+                } else if (error instanceof ReferenceError) {
+                    $(".error").text(" Malformed expression");
+                } else if (error instanceof TypeError) {
+                    $(".error").text(" Malformed expression");
+                } else {
+                    $(".error").text(error);
+                }
+            }
         }
         if (e.keyCode == 27) {
-            $("#calculate").val("");
-            x = "";
+            try {
+                $("#calculate").val("");
+                x = "";
+                $(".error").text(" ")
+            }
+            catch (error) {
+                if (error instanceof SyntaxError) {
+                    $(".error").text("Error in Syntax");
+                } else if (error instanceof ReferenceError) {
+                    $(".error").text(" Malformed expression");
+                } else if (error instanceof TypeError) {
+                    $(".error").text(" Malformed expression");
+                } else {
+                    $(".error").text(error);
+                }
+            }
         }
 
     });
