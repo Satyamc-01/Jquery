@@ -72,6 +72,8 @@ $(document).ready(function () {
     });
     $("#calculate").keydown(function (e) {
         // $("#calculate").focus()
+        $(".error").text(" ")
+
         if (e.keyCode == 13) {
             try {
                 new_str = $("#calculate").val();
@@ -92,57 +94,10 @@ $(document).ready(function () {
             }
         }
         if (e.keyCode == 27) {
-            try {
-                $("#calculate").val("");
-                x = "";
-                $(".error").text(" ")
-            }
-            catch (error) {
-                if (error instanceof SyntaxError) {
-                    $(".error").text("Error in Syntax");
-                } else if (error instanceof ReferenceError) {
-                    $(".error").text(" Malformed expression");
-                } else if (error instanceof TypeError) {
-                    $(".error").text(" Malformed expression");
-                } else {
-                    $(".error").text(error);
-                }
-            }
+            $("#calculate").val("");
+            x = "";
         }
 
     });
-    // function sqroot(
-    //     if (x.includes("√")) {
-    //         y = x.indexOf("√")
-    //         z = x.indexOf("+", y)
-    //         console.log(x,y);
-    //         if (y + 1 == z || z < y) {
-    //             z = x.indexOf("%", y)
-    //             if (y + 1 == z || z < y) {
-    //                 z = x.indexOf("-", y)
-    //                 if (y + 1 == z || z < y) {
-    //                     z = x.indexOf("/", y)
-    //                     if (y + 1 == z || z < y) {
-    //                         z = x.indexOf("*", y)
-    //                         if (y + 1 == z || z < y) {
-    //                             z = x.length;
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //         else {
-    //             return x;
-    //         }
 
-    //         a = x.slice(y + 1, z)
-    //         sqrt = Math.sqrt(parseInt(a));
-    //         b = x.replace(/√[0-9]+/g, `${sqrt}`)
-    //         answer = (eval(b));
-    //         $("#calculate").val(answer);
-    //         console.log(answer);
-
-    //     }
-    // )
-    // new_str = new_str.replace(/²/g, "**2")
 });
