@@ -1,58 +1,53 @@
 $(document).ready(function () {
-    var x = "";
+    var x = ""; // string
     var new_str = ""
 
 
     $("#calculate").keypress(function (e) {
         e.preventDefault();
     })
+
     $("button").click(function () {
         $(".error").text("")
-
         $(this).blur();
-
-
         x = $("#calculate").val();
+
         if (($(this).attr("id") != "equals") && ($(this).attr("id") != "multiply") && ($(this).attr("id") != "root") && ($(this).attr("id") != "square")) {
             x += $(this).text();
             $("#calculate").val(x);
         }
-        // $("#calculate").val(x)
-        // console.log(x)
+        //All Clear
         if ($(this).attr("id") == "allClear") {
             $("#calculate").val("");
             x = "";
         }
+        //Backspace
         if ($(this).attr("id") == "delete") {
-            // x = ($(this).text());
-            x = x.slice(0, -1);
-            $("#calculate").val(x)
-            // console.log(x);
+            // x = x.slice(0, -1);
+            // $("#calculate").val(x)
         }
+        //Multiply
         if ($(this).attr("id") == "multiply") {
             x += "*"
             $("#calculate").val(x);
         }
+        //sqrt
         if ($(this).attr("id") == "root") {
             x += "√ "
-            // var value = value.replace("²", "**0.5");
-
             $("#calculate").val(x);
         }
-
+        //square
         if ($(this).attr("id") == "square") {
-            // x = (Math.pow(x, 2))
             x += "²"
             $("#calculate").val(x);
         }
+        //equals
         if ($(this).attr("id") == "equals") {
             try {
                 new_str = $("#calculate").val();
-
                 var a = new_str.replace(/[²]/g, "**2 ");
                 var b = a.replace(/[√]/g, "**0.5 ");
-
-                answer = eval(b)
+                var answer = eval(b)
                 new_str = "";
                 $("#calculate").val(answer);
             }
@@ -69,29 +64,27 @@ $(document).ready(function () {
             }
         }
     });
+
+    //binding keyboard via keycode
     $("body").keydown(function (e) {
-
-
-        // $('button').css({"background-color": "#53c9a1"});
         $(".error").text("")
 
         if (e.keyCode == 13) {
             try {
-                for (var i = 0; i < x.length - 1; i++) {
+                for (let i = 0; i < x.length - 1; i++) {
                     if (x.charAt(i) == "/" && x.charAt(i + 1) == "/") {
                         throw "Malformed Expressions"
-
                     }
                 }
                 new_str = $("#calculate").val();
-                var answer = eval(new_str);
+                answer = eval(new_str);
                 x = "";
                 $("#calculate").val(answer);
-
             }
+            // catch eroor
             catch (error) {
                 if (error instanceof SyntaxError) {
-                    $(".error").text("Error in Syntax");
+                    $(".error").text("Malformed expression");
                 } else if (error instanceof ReferenceError) {
                     $(".error").text(" Malformed expression");
                 } else if (error instanceof TypeError) {
