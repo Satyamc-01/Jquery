@@ -31,34 +31,36 @@ body {
   float: right;
 } 
 
-button#addmore,
-button#submit,
-button#addchild,
-button#delete,
-button#delete1{
+button.addmore,
+button.submit,
+button.addchild,
+button.delete,
+button.delete1{
   border: none;
   padding: 10px;
-  width: 12%;  
+  width: 13%;
   color: #fff;
   border-radius: 5px;
+  font-size: 14px;
 }
-button#delete1{
-  width: 13%;
+
+button.delete1{
+  width: 17%;
 }
-button#addmore,button#submit{
+button.addmore,button.submit{
   background-color: #3cd010;
 
 }
-button#addchild{
+button.addchild{
   background-color: black;
 
 }
-button#delete,button#delete1{
+button.delete,button.delete1{
   background-color: red;
 }
-input#title{
+input.title{
   padding-top: 8px;
-  width: 40%;
+  width: 43%;
   padding-bottom: 10px;
   font-size: 14px;
   padding-left: 10px;
@@ -67,11 +69,11 @@ input#title{
 .left{
   width: 60%;
 }
-input#subtitle,
-input#value{
+input.subtitle,
+input.value{
  
   font-size: 14px;
-  padding: 5px 10px;
+  padding: 5px 0px;
   margin-right: 10px;
   
 }
@@ -81,15 +83,15 @@ input#value{
   margin-top: 10px;
 }
 .inside-btn.fl {
-  width: 80%;
+  width: 100%;
   margin: 15px;
 }
 .child{
   width: 80%;
   border: 1px solid rgb(243, 194, 33);
-  margin: 14px;
+
   padding: 10px 16px;
-  margin-top: 0px;
+  margin-top: 10px;
 }
 .specification{
   color: #000;
@@ -113,4 +115,8 @@ table, tr, th, td{
 }
 table{
   margin-bottom: 20px;
+}
+.tab1{
+  margin: 5px;
+  padding: 2px;
 }
