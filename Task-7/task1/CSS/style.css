@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,400;1,600&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
+
+/* Global Declarations */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Titillium Web', sans-serif;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.clearfix:before, .clearfix:after {
+  width: 100%;
+  display: table;
+  content: '';
+}
+.container{
+  max-width: 100%;
+  width: 80%;  
+  margin: 0 auto;
+  padding: 15px;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+} 
+
+button#addmore,
+button#submit,
+button#addchild,
+button#delete,
+button#delete1{
+  border: none;
+  padding: 10px;
+  width: 12%;  
+  color: #fff;
+  border-radius: 5px;
+}
+button#delete1{
+  width: 13%;
+}
+button#addmore,button#submit{
+  background-color: #3cd010;
+
+}
+button#addchild{
+  background-color: black;
+
+}
+button#delete,button#delete1{
+  background-color: red;
+}
+input#title{
+  padding-top: 8px;
+  width: 40%;
+  padding-bottom: 10px;
+  font-size: 14px;
+  padding-left: 10px;
+
+}
+.left{
+  width: 60%;
+}
+input#subtitle,
+input#value{
+ 
+  font-size: 14px;
+  padding: 5px 10px;
+  margin-right: 10px;
+  
+}
+.block{
+  border: 1px solid black;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.inside-btn.fl {
+  width: 80%;
+  margin: 15px;
+}
+.child{
+  width: 80%;
+  border: 1px solid rgb(243, 194, 33);
+  margin: 14px;
+  padding: 10px 16px;
+  margin-top: 0px;
+}
+.specification{
+  color: #000;
+  text-align: center;
+  width: 40%;
+}
+table{
+  width: 100%;
+}
+/* tr{
+  border: 1px solid black;
+} */
+.details{
+  width: 100%;
+  text-align: left;
+  padding-left: 112px;
+}
+table, tr, th, td{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table{
+  margin-bottom: 20px;
+}
