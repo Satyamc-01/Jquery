@@ -73,7 +73,7 @@ input.subtitle,
 input.value{
  
   font-size: 14px;
-  padding: 5px 0px 5px 5px;
+  padding: 3px 20px 3px 5px;
   margin-right: 10px;
   
 }
@@ -88,7 +88,7 @@ input.value{
 }
 .child{
   width: 93%;
-  border: 1px solid rgb(243, 194, 33);
+  border: 1px solid rgb(255, 193, 0 );
 
   padding: 10px 16px;
   margin-top: 10px;
@@ -122,4 +122,10 @@ table{
 }
 td{
   width: 50%;
+}
+button.btn.btn-secondary.btn-default.bootbox-cancel {
+  background-color: red;
+}
+.modal-content {
+  background-color: aliceblue;
 }
