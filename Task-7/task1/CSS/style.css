@@ -48,7 +48,7 @@ button.delete1{
   width: 17%;
 }
 button.addmore,button.submit{
-  background-color: #3cd010;
+  background-color: #70cd14f5;
 
 }
 button.addchild{
@@ -59,9 +59,9 @@ button.delete,button.delete1{
   background-color: red;
 }
 input.title{
-  padding-top: 8px;
+  padding-top: 4px;
   width: 43%;
-  padding-bottom: 10px;
+  padding-bottom: 4px;
   font-size: 14px;
   padding-left: 10px;
 
@@ -73,7 +73,7 @@ input.subtitle,
 input.value{
  
   font-size: 14px;
-  padding: 5px 0px;
+  padding: 5px 0px 5px 5px;
   margin-right: 10px;
   
 }
@@ -119,4 +119,7 @@ table{
 .tab1{
   margin: 5px;
   padding: 2px;
+}
+td{
+  width: 50%;
 }

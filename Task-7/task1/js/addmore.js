@@ -23,9 +23,7 @@ $(document).ready(function () {
             </div>
         </div>
         `)
-
                 $(".details").append(`
-        
         <table class="tab1">
         <thead>
         <tr></tr>
@@ -35,16 +33,13 @@ $(document).ready(function () {
         </table>`)
             }
         });
-
-
-
     })
 
     $("body").on("click", ".addchild", function () {
-        var xa = this
+        var index = this
         bootbox.confirm("You want to add subtitle?", function (result) {
             if (result == true) {
-                var position = $(".addchild").index(xa)
+                var position = $(".addchild").index(index)
 
                 $(".inside-btn").eq(position).append(`
                     <div class="child fl">
@@ -59,17 +54,14 @@ $(document).ready(function () {
     })
 
     $("body").on("click", ".delete", function () {
-        var aaa=this
+        var index=this
         bootbox.confirm("You want to delete??", function (result) {
             if (result == true) {
-                var delindex = $(".delete").index(aaa)
+                var delindex = $(".delete").index(index)
                 $(".block").eq(delindex).remove()
                 $(".tab1").eq(delindex).remove()
             }
-
         });
-
-
     })
     $(".block1").on("click", ".delete1", function () {
         bootbox.confirm("You want to delete??", function (result) {
@@ -100,10 +92,6 @@ $(document).ready(function () {
                 <td>${subtitle}</td>
                 <td>${value}</td>
                 </tr> `)
-
         }
-
-
     })
-
 });
