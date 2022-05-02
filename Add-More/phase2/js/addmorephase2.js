@@ -34,11 +34,6 @@ $(document).ready(function () {
         </table>`)
             }
         });
-
-
-
-
-
     })
 
 
@@ -71,8 +66,8 @@ $(document).ready(function () {
             if(parent==1){
                 return
             }
-            // bootbox.confirm("You want to delete??", function (result) {
-            //     if (result == true) {
+            bootbox.confirm("You want to delete??", function (result) {
+                if (result == true) {
                     console.log("s, delindex");
                     if (parent > 1) {
 
@@ -81,8 +76,8 @@ $(document).ready(function () {
                         $(".tab1").eq(delindex).remove()
                     }
                 }
-        //     });
-        // }
+            });
+        }
     })
 
     $(".block1").on("click", ".delete1", function () {

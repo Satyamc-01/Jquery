@@ -23,6 +23,7 @@ body {
   width: 80%;  
   margin: 0 auto;
   padding: 15px;
+  border: 3px solid black;
 }
 .fl{
   float: left;
@@ -101,13 +102,10 @@ input.value{
 table{
   width: 100%;
 }
-/* tr{
-  border: 1px solid black;
-} */
-.details{
-  width: 100%;
+.details {
+  width: 95%;
   text-align: left;
-  padding-left: 112px;
+  padding-left: 59px;
 }
 table, tr, th, td{
   border: 1px solid black;
@@ -131,4 +129,19 @@ button.btn.btn-secondary.btn-default.bootbox-cancel {
 }
 .blank{
   display: none;
+}
+button.btn.btn-primary.bootbox-accept{
+  border: 3px solid #005dd1e0;
+}
+button.btn.btn-secondary.btn-default.bootbox-cancel{
+  border: 3px solid #c7454594;
+}
+.modal-dialog{
+  top: 30%;
+}
+input#myInput{
+  padding-left: 7px;
+  margin-right: 96px;
+  text-align: left;
+  margin-top: 10px;
 }
