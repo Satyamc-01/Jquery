@@ -59,7 +59,7 @@ $(document).ready(function () {
     })
 
     $("body").on("click", ".delete", function () {
-        var aaa=this
+        var aaa = this
         bootbox.confirm("You want to delete??", function (result) {
             if (result == true) {
                 var delindex = $(".delete").index(aaa)
@@ -72,7 +72,7 @@ $(document).ready(function () {
 
     })
     $(".block1").on("click", ".delete1", function () {
-        var c=this
+        var c = this
         bootbox.confirm("You want to delete??", function (result) {
             if (result == true) {
                 var childdlt = $(".delete1").index(c)
@@ -104,5 +104,28 @@ $(document).ready(function () {
 
 
     })
+    $('#export').click(function () {
+        
+        var doc = new jsPDF("p", "mm", "a4");
+        html2canvas(document.querySelector('.container')).then(function (canvas) {
+            var imgData = canvas.toDataURL('image/png');
+            var pageHeight = 295;
+            var imgWidth = (canvas.width * 50) / 300;
+            var imgHeight = canvas.height * imgWidth / canvas.width;
+            var heightLeft = imgHeight;
+            var position = 15;
 
+            doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+            heightLeft -= pageHeight;
+
+            while (heightLeft >= 0) {
+                position = heightLeft - imgHeight;
+                doc.addPage();
+                doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+            }
+            doc.output('dataurlnewwindow');
+            doc.save(Date.now() + '.pdf');
+        });
+    });
 });

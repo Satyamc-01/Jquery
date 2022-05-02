@@ -3,6 +3,7 @@ $(document).ready(function () {
     $('p').hide();
     $('p').eq(2).show();
     $('.resume').hide();
+    $(".tag").html("<h3>: Enter Seconds").css({"color":"red"})
     $('.restart').hide();
     var timer;
     

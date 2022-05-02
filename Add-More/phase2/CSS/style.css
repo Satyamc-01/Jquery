@@ -7,6 +7,7 @@
 }
 body {
   margin: 0;
+  position: relative;
   padding: 0;
   font-family: 'Titillium Web', sans-serif;
   color: #fff;
@@ -145,3 +146,4 @@ input#myInput{
   text-align: left;
   margin-top: 10px;
 }
+

@@ -30,13 +30,11 @@ $(document).ready(function () {
 
     $('.stop').click(function () {
         $(".start,.resume").hide();
-        // $(".resume ").hide();
         $(".restart").show();
         $(".tag h4").hide();
         $(".tag h4").eq(1).show().css({ "color": "red" });
         $(".tag .stopped").show().prepend("<h3>Stop at " + hours + "HH, " + minutes + "MM, " + sec + "SS").css({ "color": "red" });
         $('.pause,.stop').attr('disabled', true);
-        // $('.stop').attr('disabled', true);
         clearInterval(timer);
     });
 
@@ -49,12 +47,10 @@ $(document).ready(function () {
         clearInterval(timer);
         $("th").text("00");
         $('.restart,.resume').hide();
-        // $('.resume').hide();
         $('.start').attr('disabled', false);
         $('.stop,.pause').attr('disabled', true);
         $(".tag h3").empty();
         $(".tag h4").hide();
-        // $(".hit").show();
     });
 
     /*--------------------------Pause-------------------------------------*/
@@ -63,7 +59,6 @@ $(document).ready(function () {
     $('.pause').click(function () {
         $('.resume').show();
         $('.start,.restart').hide();
-        // $('.restart').hide();
         $(".pause").attr('disabled', true);
         $(".tag h4").hide();
         $(".tag h4").eq(2).show().css({ "color": "orange" });
@@ -79,7 +74,6 @@ $(document).ready(function () {
         $('.resume,.hit').hide();
         $('.start').show();
         $('p').eq(0).show();
-        // $(".hit").hide();
         $(".tag h4").hide();
         $(".tag h4").eq(0).show();
         $('.pause').attr('disabled', false);
@@ -93,11 +87,9 @@ $(document).ready(function () {
         startTimer();
         $('.start').show();
         $('.restart,.hit').hide();
-        // $(".hit").hide();
         $(".tag .pause").empty();
         $(".tag .stopped").empty();
         $('.pause,.stop').attr('disabled', false);
-        // $('.stop').attr('disabled', false);
         $(".tag h4").eq(0).show().css({ "color": "green" });
         $(".tag h4").eq(1).hide();
     });
@@ -131,4 +123,6 @@ $(document).ready(function () {
             $("th").eq(3).text((csec < 10) ? ('0' + csec) : csec);
         }, 10);
     }
+
+  
 });

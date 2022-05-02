@@ -2,7 +2,7 @@ $(document).ready(function () {
     $(".entries div").hide();
     $(".entry1").eq(0).show();
     $(".prev,.submit,.update,.cancel").hide();
-    var x, length, i=1, s=false;
+    var x, length, i = 1, s = false;
     $(".tab button").eq(0).css({ "background-color": "blanchedalmond" })
 
     /*------------------for Nav-Tab---------------------*/
@@ -225,7 +225,7 @@ $(document).ready(function () {
         }
         else {
             tc = "Disagree";
-        }        
+        }
     }
 
     $("#fname").click(function () {
@@ -244,4 +244,59 @@ $(document).ready(function () {
         $("#say").attr("placeholder", "").placeholder();
     });
 
+    // var pdfdoc = new jsPDF();
+    // var specialElementHandlers = {
+    //     '#editor': function (element, renderer) {
+    //         return true;
+    //     }
+    // };
+
+
+    //     $('#export').click(function () {
+
+    //         pdfdoc.addHTML($('table').html(), 15, 15, {
+    //             'width': 170,
+    //             'elementHandlers': specialElementHandlers
+
+    //         });
+    //         pdfdoc.save('First.pdf');
+    //     });
+    $('#export').click(function(){
+        var doc = new jsPDF("p", "mm", "a4");
+        html2canvas(document.querySelector('.all')).then(function(canvas){
+          var imgData = canvas.toDataURL('image/png');
+          var pageHeight = 295;  
+          var imgWidth = (canvas.width * 50) / 215 ; 
+          var imgHeight = canvas.height * imgWidth / canvas.width;
+          var heightLeft = imgHeight;
+          var position = 15;
+      
+          doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+          heightLeft -= pageHeight;
+      
+          while (heightLeft >= 0) {
+              position = heightLeft - imgHeight;
+              doc.addPage();
+              doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+              heightLeft -= pageHeight; 
+          }
+          doc.output('dataurlnewwindow');
+          doc.save(Date.now() +'.pdf');
+        });
+      });
+
+    // function HTMLToPDF() {
+    //     const { jsPDF } = window.jspdf;
+
+    //     var doc = new jsPDF('l', 'mm', [1200, 1210]);
+    //     var pdfjs = document.querySelector('.entries');
+
+    //     doc.html(pdfjs, {
+    //         callback: function (doc) {
+    //             doc.save("htmltopdf.pdf");
+    //         },
+    //         x: 10,
+    //         y: 10
+    //     });
+    // }
 });
