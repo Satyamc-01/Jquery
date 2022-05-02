@@ -10,6 +10,7 @@ $(document).ready(function () {
     </tbody>
     </table>`)
 
+
     $(".addmore").click(function () {
         bootbox.confirm("Do you want to add", function (result) {
             if (result == true) {
@@ -22,7 +23,6 @@ $(document).ready(function () {
             </div>
         </div>
         `)
-
                 $(".details").append(`
         
         <table class="tab1">
@@ -32,15 +32,12 @@ $(document).ready(function () {
         <tbody>
         </tbody>
         </table>`)
-
-                // var s = $(".block").length
-                // console.log(s);
-                // if(s==1){
-                //     $(".delete").attr("disabled",true)
-                // }
-
             }
         });
+
+
+
+
 
     })
 
@@ -61,26 +58,31 @@ $(document).ready(function () {
                 </div>
                 `)
             }
+
         });
     })
 
     $("body").on("click", ".delete", function () {
-        var aaa = this
+
+        var s = $(this).parents(".block").find(".child").length
         var parent = $(this).parents().find(".block").length;
-        bootbox.confirm("You want to delete??", function (result) {
-            if (result == true) {
-                var s = $(".child").length
-                // console.log(s, delindex);
-                if (parent > 1) {
-                    if (s == 0) {
+        var aaa = this
+        if (s == 0) {
+            if(parent==1){
+                return
+            }
+            // bootbox.confirm("You want to delete??", function (result) {
+            //     if (result == true) {
+                    console.log("s, delindex");
+                    if (parent > 1) {
+
                         var delindex = $(".delete").index(aaa)
                         $(".block").eq(delindex).remove()
                         $(".tab1").eq(delindex).remove()
                     }
                 }
-
-            }
-        });
+        //     });
+        // }
     })
 
     $(".block1").on("click", ".delete1", function () {
@@ -89,76 +91,54 @@ $(document).ready(function () {
             if (result == true) {
                 var childdlt = $(".delete1").index(c)
                 $(".child").eq(childdlt).remove()
-                var pos1 = $(this).parent().parent().parent().index();
                 $("tbody tr").eq(childdlt).remove()
-
             }
-        })
 
+        });
     })
 
     $("body").on("keyup", ".title", function () {
 
         var pos = $(this).parent().parent().index();
-        // var pos1 = $(this).parent().parent().parent().index();
-
-
-
         var b = $(this).parents(".block").find(".child").length//childlength
         $("table").eq(pos).find("th").remove()
-        // $("table").eq(pos1).find("tbody").eq(0).empty()
-        // $("table").eq(pos1).find("tbody").eq(1).empty()
-        // console.log(pos, pos1);
-
         var a = $(this).parents(".block").find(".title").val()
+        if (a == "") {
+            $("table").eq(pos).find("thead tr").addClass("blank")
+        }
+        else {
+            $("table").eq(pos).find("thead tr").removeClass("blank")
+        }
         $(this).parents().find("table thead tr").eq(pos).append(`
         <th colspan=2>${a}</th>
         `)
-        // for (i = 0; i < b; i++) {
-        //     var subtitle = $(this).parents(".block").find(".subtitle").eq(i).val()
-        //     var value = $(this).parents(".block").find(".value").eq(i).val()
-        //     // console.log(subtitle, value);
-
-        //     $("table").eq(pos1).find("tbody").append(`<tr>
-        //         <td>${subtitle}</td>
-        //         <td>${value}</td>
-        //         </tr> `)
-        // }
-
-
     })
     $("body").on("keyup", ".subtitle,.value", function () {
 
-        // var pos1 = $(this).parent().parent().index();    
         var pos1 = $(this).parent().parent().parent().index();
-
-
-
         var b = $(this).parents(".block").find(".child").length//childlength
-        // $("table").eq(pos).find("th").remove()
         $("table").eq(pos1).find("th").remove()
-
         $("table").eq(pos1).find("tbody").eq(0).empty()
         $("table").eq(pos1).find("tbody").eq(1).empty()
         var a = $(this).parents(".block").find(".title").val()
         $(this).parents().find("table thead tr").eq(pos1).append(`
         <th colspan=2>${a}</th>
         `)
-        // console.log(pos, pos1);
 
-        // var a = $(this).parents(".block").find(".title").val()
-        // $(this).parents().find("table thead tr").eq(pos).append(`
-        // <th colspan=2>${a}</th>
-        // `)
         for (i = 0; i < b; i++) {
             var subtitle = $(this).parents(".block").find(".subtitle").eq(i).val()
             var value = $(this).parents(".block").find(".value").eq(i).val()
-            // console.log(subtitle, value);
-
-            $("table").eq(pos1).find("tbody").append(`<tr>
-                <td>${subtitle}</td>
-                <td>${value}</td>
-                </tr> `)
+                if (subtitle == "" && value == "") {
+                    continue
+                }
+                else {
+                  
+                    $("table").eq(pos1).find("tbody").append(`<tr>
+                        <td>${subtitle}</td>
+                        <td>${value}</td>
+                        </tr> `)
+                }
+            
         }
 
 

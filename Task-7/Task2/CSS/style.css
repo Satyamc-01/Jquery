@@ -129,3 +129,6 @@ button.btn.btn-secondary.btn-default.bootbox-cancel {
 .modal-content {
   background-color: aliceblue;
 }
+.blank{
+  display: none;
+}
