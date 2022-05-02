@@ -21,11 +21,6 @@ $(document).ready(function () {
             $("#calculate").val("");
             x = "";
         }
-        //Backspace
-        if ($(this).attr("id") == "delete") {
-            // x = x.slice(0, -1);
-            // $("#calculate").val(x)
-        }
         //Multiply
         if ($(this).attr("id") == "multiply") {
             x += "*"
