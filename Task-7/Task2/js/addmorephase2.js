@@ -100,7 +100,7 @@ $(document).ready(function () {
     $("body").on("keyup", ".title", function () {
 
         var pos = $(this).parent().parent().index();
-        var b = $(this).parents(".block").find(".child").length//childlength
+        // var b = $(this).parents(".block").find(".child").length//childlength
         $("table").eq(pos).find("th").remove()
         var a = $(this).parents(".block").find(".title").val()
         if (a == "") {
@@ -139,9 +139,13 @@ $(document).ready(function () {
                         </tr> `)
                 }
             
-        }
-
-
-    })
-
+            }
+        })
+        $("#myInput").on("keyup", function() {  
+            var values = $(this).val().toLowerCase();
+            $(".tab1").filter(function() {
+              $(this).toggle($(this).text().toLowerCase().indexOf(values) > -1)
+                    
+            });
+          })
 });
