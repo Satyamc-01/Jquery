@@ -60,17 +60,14 @@ $(document).ready(function () {
     function cal() {
 
         x = currentmonth.indexOf($("#gomonth").val());
-
         currentmonth = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         var month = d.getMonth();
         var year = d.getFullYear();
         var date = d.getDate();
         var firstDay = new Date(year, month, 1);
         var startprint = firstDay.getDay();
-
         var totdays = new Date(year, month + 1, 0).getDate();
         var currentdate = new Date();
-
 
         $('.dispmonth h2').text(currentmonth[month] + '-' + year);
 
@@ -84,7 +81,6 @@ $(document).ready(function () {
                     ++new_count;
                     if (new_count == currentdate.getDate() && month == currentdate.getMonth() && year == currentdate.getFullYear()) {
                         $(".appenddays").append(`<td class="today">${new_count}</td>`);
-
                     }
                     else if (new_count == date && new_count == color_part) {
                         $(".appenddays").append(`<td class="findate">${new_count}</td>`)

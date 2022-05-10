@@ -23,9 +23,7 @@ $(document).ready(function () {
             </div>
         </div>
         `)
-
-                $(".details").append(`
-        
+                $(".details").append(`  
         <table class="tab1">
         <thead>
         <tr></tr>
@@ -35,9 +33,6 @@ $(document).ready(function () {
         </table>`)
             }
         });
-
-
-
     })
 
     $("body").on("click", ".addchild", function () {
@@ -105,7 +100,7 @@ $(document).ready(function () {
 
     })
     $('#export').click(function () {
-        
+
         var doc = new jsPDF("p", "mm", "a4");
         html2canvas(document.querySelector('.container')).then(function (canvas) {
             var imgData = canvas.toDataURL('image/png');

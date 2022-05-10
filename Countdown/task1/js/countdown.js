@@ -2,50 +2,36 @@ $(document).ready(function () {
     var h, m, s, c = 0;
     $('p').hide();
     $('p').eq(2).show();
-    $('.resume').hide();
+    $('.resume,.restart').hide();
     $(".tag").html("<h3>: Enter Seconds").css({"color":"red"})
-    $('.restart').hide();
     var timer;
     
     $('.start').click(function () {
-        $('p').eq(0).show();
-        $('p').eq(2).hide();
-
-        var inputValue = $('#num').val();
-        
-        h = Math.floor(inputValue / 3600);
-        m = Math.floor((inputValue - (h * 3600)) / 60);
-        s = Math.floor((inputValue - (h * 3600) - (m * 60)));
-        c = 0;
-
-        $("th").eq(0).text(h);
-        $("th").eq(1).text(m);
-        $("th").eq(2).text(s);
-        $("th").eq(3).text(c);
-
-        startTimer();
-        console.log(inputValue, h, m, s, c);
-        $('.start').attr('disabled', true);
+        if($("input#num").val()==""){
+            alert("give input")
+        }else {
+            $('p').eq(0).show();
+            $('p').eq(2).hide();
+    
+            var inputValue = $('#num').val();
+            
+            h = Math.floor(inputValue / 3600);
+            m = Math.floor((inputValue - (h * 3600)) / 60);
+            s = Math.floor((inputValue - (h * 3600) - (m * 60)));
+            c = 0;
+    
+            $("th").eq(0).text(h);
+            $("th").eq(1).text(m);
+            $("th").eq(2).text(s);
+            $("th").eq(3).text(c);
+    
+            startTimer();
+            $('.start').attr('disabled', true);
+        }
     });
 
     $('.restart').click(function () {
-        $('p').eq(0).show();
-        $('p').eq(2).hide();
-        var inputValue = $('#num').val();
-
-        h = Math.floor(inputValue / 3600);
-        m = Math.floor((inputValue - (h * 3600)) / 60);
-        s = Math.floor((inputValue - (h * 3600) - (m * 60)));
-        c = 0;
-
-        $("th").eq(0).text(h);
-        $("th").eq(1).text(m);
-        $("th").eq(2).text(s);
-        $("th").eq(3).text(c);
-
-        startTimer();
-        console.log(inputValue, h, m, s, c);
-        $('.start').show();
+        $(".start").trigger("click").show()
         $('.restart').hide();
     });
 
@@ -57,16 +43,13 @@ $(document).ready(function () {
         $("th").text(0);
         clearInterval(timer);
         $('.start').show();
-        $('.restart').hide();
-        $('.resume').hide();
+        $('.restart,.resume').hide();
         $('.start').attr('disabled', false);
 
     });
 
     $('.pause').click(function () {
         $('p').hide();
-
-
         h = $("th").eq(0).text();
         m = $("th").eq(1).text();
         s = $("th").eq(2).text();
@@ -75,8 +58,8 @@ $(document).ready(function () {
         clearInterval(timer)
 
         $('.resume').show();
-        $('.start').hide();
-        $('.restart').hide();
+        $('.start,.restart').hide();
+        // $('.restart').hide();
     });
 
     $('.resume').click(function () {

@@ -38,8 +38,7 @@ $(document).ready(function () {
     $("button.save").click(function () {
         $(".entries div").hide();
         if (x == null) {
-            $(".tab button").css({ "background-color": "white" })
-            $(".tab button").eq(x).css({ "background-color": "blanchedalmond" })
+            $(".tab button").css({ "background-color": "white" }).eq(x).css({ "background-color": "blanchedalmond" })
             x = 0;
         }
         x++;
@@ -52,8 +51,8 @@ $(document).ready(function () {
         $(".entries div").eq(x).show();
         $(".prev").show();
         boolean();
-        $(".tab button").css({ "background-color": "white" })
-        $(".tab button").eq(x).css({ "background-color": "blanchedalmond" })
+        $(".tab button").css({ "background-color": "white" }).eq(x).css({ "background-color": "blanchedalmond" })
+
     });
 
     /*----------------for previous-----------------------*/
@@ -68,8 +67,7 @@ $(document).ready(function () {
         $(".save").show();
         $(".submit").hide();
         boolean();
-        $(".tab button").css({ "background-color": "white" })
-        $(".tab button").eq(x).css({ "background-color": "blanchedalmond" })
+        $(".tab button").css({ "background-color": "white" }).eq(x).css({ "background-color": "blanchedalmond" })
     });
 
     /*-----------------Submit button----------------------*/
@@ -89,8 +87,8 @@ $(document).ready(function () {
             i = x;
         });
         x = 0;
-        $(".tab button").css({ "background-color": "white" });
-        $(".tab button").eq(x).css({ "background-color": "blanchedalmond" });
+        $(".tab button").css({ "background-color": "white" }).eq(x).css({ "background-color": "blanchedalmond" });
+   
         return (x);
     });
 

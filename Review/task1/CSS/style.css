@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,400;1,600&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
+
+/* Global Declarations */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Titillium Web', sans-serif;
+  color: #000;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.clearfix:before, .clearfix:after {
+  width: 100%;
+  display: table;
+  content: '';
+}
+.container{
+  max-width: 100%;
+  width: 100%;  
+  margin: 0 auto;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float:right;
+}
+.entries{
+  text-align: center;
+  padding-top: 30px;
+}
+.wizard{
+  text-align: center;
+}
+.all {
+  border: 10px solid #00000047;
+  padding: 15px;
+  margin-top: 100px;
+  width: 50%;
+}
+.buttons{
+  text-align: center;
+}
+.tab {
+  overflow: hidden;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 380px;
+}
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 28px;
+  transition: 0.3s;
+}
+
+label{
+  font-size: 20px;
+  margin-right: 20px;
+}
+.error{
+  color:red;
+  font-size: 16px;
+}
+.all{
+  background-color: aliceblue;
+}
+.tab button{
+  text-shadow: 1px 1px cornflowerblue;
+}
+.c_front,.c_back{
+  width: 63%;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+.right-side,.left-side{
+  width: 50%;
+}
+.card{
+  width: 50%;
+}
+.display,.display1{
+  width:100%;
+  margin: 0 auto;
+}
+label{
+  font-size: 17px;
+}
+label[for=color]{
+  font-size: 22px;
+}
+
+h3,h6,h2,h1,h5{
+  margin: 0 auto;
+}
+.clogo {
+  text-align: center;
+  padding-top: 84px;
+}
+.comp{
+  text-align: center;
+}
+i.fa.fa-coffee {
+  font-size: 40px;
+}
+.right-side::before{
+  content:" ";
+  height:20px;
+}
+.details{
+  padding-top: 70px ;
+}
+p{
+  margin: 0 auto;
+  line-height: 14px;
+}
+.dtel,.demail,.dwebsite{
+  padding-bottom: 10px;
+}
+.fa{
+  padding-right: 10px;
+}
+.partition{
+  border-left: 1px solid black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.dname,.ddesignation,.details{
+  padding-left: 20px;
+}
+.front-side,.back-side{
+  padding-left: 60px;
+}
+.scan{
+  text-align: center;
+  padding-bottom: 70px;
+}
+i.fa.fa-qrcode{
+  font-size: 120px;
+  padding-right: 0px;
+}
+.qr{
+  padding-top: 80px;
+  text-align: center;
+}
+div#qrcode{
+  text-align: center;
+    padding-top: 60px;
+}
+canvas{
+    height: 120px;
+    text-align: center;
+}
+i.fa.fa-qrcode{
+  font-size: 120px;
+}
+.display1 .partition{
+  border: none;
+  text-align: center;
+}
+.display1 div#qrcode{
+  text-align: center;
+    padding-top: 80px;
+}
+.display1 .comp h3{
+  padding-top: 25px;
+}
+.display1 div#qrcode1 {
+  text-align: center;
+  padding-top: 14px;
+  padding-bottom: 30px;
+}
+.display1 .c_front{
+  position: relative;
+}
+.icon1,.icon2,.icon3,.icon4{
+  position: absolute;
+}
+.icon1 {
+  top: 59%;
+  right: 1%;
+  transform: rotate(
+    131deg);
+}
+.icon2{
+  left: 0%;
+  top:0%;
+}
+.icon3 {
+  top: 11%;
+  right: -1%;
+  z-index: -1;
+}
+i.fa.fa-snowflake-o {
+  font-size: 124px;
+}
+i.fa.fa-keyboard-o {
+  font-size: 98px;
+  padding-right: 0px;
+}
+i.fa.fa-ravelry {
+  font-size: 66px;
+}
+.display1 .left-side{
+  width: 100%;
+}
+.block,.block1{
+  height: 50px;
+}
+.display1 .right-side{
+  width: 100%;
+}
+.display1 .details{
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-bottom: 0px;
+}
+.display1 i.fa.fa-phone{
+  padding-left: 0px;
+}
+.display1 i.fa.fa-envelope-o{
+  padding-left: 0px;
+}
+.display1 .c_back{
+  position: relative;
+}
+i.fa.fa-superpowers {
+  font-size: 70px;
+}
+.icon{
+  position: absolute;
+    top: 68%;
+}
+.icon4{
+  right: -1%;
+  top:0%;
+}
+.display1 .clogo {
+  position: absolute;
+  top: 0%;
+  padding: 0px;
+  right: -1%;
+}
+.display1 .dtel{
+  width: fit-content;
+  margin:0 auto;
+}
+.display1 .demail{
+  width: fit-content;
+  margin:0 auto;
+}
+.display1 .dwebsite {
+  width: fit-content;
+  margin:0 auto;
+}
+.clogo .fa {
+  font-size: 80px;
+}
+.front-side, .back-side {
+  padding-left: 42px;
+}

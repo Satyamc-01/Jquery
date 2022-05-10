@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,400;1,600&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
+
+/* Global Declarations */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Titillium Web', sans-serif;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.clearfix:before, .clearfix:after {
+  width: 100%;
+  display: table;
+  content: '';
+}
+.container{
+  max-width: 100%;
+  width: 80%;  
+  margin: 0 auto;
+  padding: 15px;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+} 
+/* 
+
+input.title{
+  padding-top: 4px;
+  width: 43%;
+  padding-bottom: 4px;
+  font-size: 14px;
+  padding-left: 10px;
+
+} */
+.left{
+  width: 60%;
+}
+
+.block{
+  border: 2px solid black;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.inside-btn.fl {
+  width: 100%;
+  padding: 15px;
+}
+/* .child{
+  width: 93%;
+  border: 1px solid rgb(243, 194, 33);
+
+  padding: 10px 16px;
+  margin-top: 10px;
+} */
+.display{
+  color: #000;
+  text-align: center;
+  width: 40%;
+}
+
+/* tr{
+  border: 1px solid black;
+} */
+.details{
+  width: 100%;
+  text-align: left;
+  padding-left: 112px;
+}
+select#child{
+  padding: 10px;
+  margin: 10px;
+}

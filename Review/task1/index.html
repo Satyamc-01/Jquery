@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Review</title>
+    <link rel="shortcut icon" href="./assets/images/icon.png" type="image/png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"></script>
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <script src="js/jquery-3.6.0.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/130527/qrcode.js"></script>
+    <script src="./js/jquery.validate.js"></script>
+    <script src="js/template.js">
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="all fl">
+
+            <div class="tab">
+                <button class="level1">Template</button>
+                <button class="level2">Theme</button>
+                <button class="level3">Personalization</button>
+            </div>
+
+            <div class="entries clearfix">
+                <form id="form">
+                    <div class="entry1 clearfix">
+
+
+                        <label for="template">template</label><br>
+                        <label id="clean" for="clean">clean</label>
+                        <input type="radio" id="clean" class="template" name="template" value="clean" autocomplete="off"
+                            checked><br>
+
+                        <label id="standard" for="standard">standard</label>
+                        <input type="radio" id="standard" class="template" name="template" value="standard">
+                    </div>
+
+                    <div class="entry2 clearfix">
+                        <label for="color">Select your theme</label><br>
+                        <label for="pcolor">primary color(Choose Dark Color)</label>
+                        <input type="color" id="pcolor" name="pcolor"><br>
+
+                        <label for="scolor">secondary color(Choose light Color)</label>
+                        <input type="color" id="scolor" name="scolor"><br>
+
+                        <label for="tcolor">tertiary color(Choose extreme light Color)</label>
+                        <input type="color" id="tcolor" name="tcolor"
+                            placeholder="tertiary color(Choose Dark Color)"><br>
+                        <button type="button" id="creset">Reset</button>
+
+                    </div>
+
+                    <div class="entry3 clearfix ">
+
+                        <label for="company">Company name</label>
+                        <input type="text" id="company" name="company" placeholder="Enter Name of Company"><br>
+
+                        <label for="logo">Logo:</label>
+                        <input type="text" id="logo" name="logo" placeholder="Enter font awsome 4 logo">
+                        <a href="https://fontawesome.com/v4/icons/" target="_blank">reference</a><br>
+
+                        <label for="website">Website</label>
+                        <input type="text" class="qr-url" name="website" placeholder="URL or Text"><br>
+
+
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Enter Full Name"><br>
+
+                        <label for="designation">designation</label>
+                        <input type="text" id="designation" name="designation" placeholder="Enter designation"><br>
+
+                        <label for="tel">Contact no:</label>
+                        <input type="text" id="number" name="number" placeholder="Enter Contact Number"
+                            autocomplete="off"><br>
+
+                        <label for="email">Email ID:</label>
+                        <input type="text" id="email" name="email" placeholder="Enter Email" validate="email"><br>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="card fl">
+            <div class="display">
+                <div class="front-side">
+                    <h3>Front</h3>
+                </div>
+                <div class="c_front clearfix">
+                    <div class="left-side fl">
+                        <div class="clogo">
+                            <i class="fa fa-coffee"></i>
+                        </div>
+                        <div class="comp">
+                            <h3>Company Name</h3>
+                        </div>
+                    </div>
+                    <div class="right-side fl">
+                        <div class="partition">
+                            <div class="dname">
+                                <h2>John Doe</h3>
+                            </div>
+                            <div class="ddesignation">
+                                <h3>designation</h3>
+                            </div>
+                            <div class="details">
+                                <div class="dtel clearfix">
+                                    <i class="fa fa-phone fl" aria-hidden="true"></i>
+                                    <p class="fl">7600051835</p>
+                                </div>
+                                <div class="demail clearfix">
+                                    <i class="fa fa-envelope-o fl" aria-hidden="true"></i>
+                                    <p class="fl">abc@gmail.com</p>
+                                </div>
+                                <div class="dwebsite clearfix">
+                                    <i class="fa fa-chrome fl" aria-hidden="true"></i>
+                                    <p class="fl">https://www.weboccult.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="back-side">
+                    <h3>Back</h3>
+                </div>
+                <div class="c_back">
+                    <div id="qrcode"><i class="fa fa-qrcode" aria-hidden="true"></i></div>
+                    <div class="scan">
+                        <h3>Scan me</h3>
+                    </div>
+                </div>
+                <!-- <button type="button" id="reset">Reset</button>
+                <button type="button" id="download">Download</button> -->
+
+            </div>
+            <div class="display1">
+                <div class="front-side">
+                    <h3>Front</h3>
+                </div>
+                <div class="c_front clearfix">
+                    <div class="left-side fl">
+                        <!-- <div class="clogo">
+                            <i class="fa fa-coffee"></i>
+                        </div> -->
+                        <div class="comp">
+                            <h3>Company Name</h3>
+                        </div>
+                        <div id="qrcode1"><i class="fa fa-qrcode" aria-hidden="true"></i></div>
+
+                    </div>
+                    <div class="right-side fl">
+  
+
+                        <div class="icon2">
+                            <i class="fa fa-ravelry" aria-hidden="true"></i>
+                        </div>
+
+                        <div class="block"></div>
+                    </div>
+                </div>
+                <div class="back-side">
+                    <h3>Back</h3>
+                </div>
+                <div class="c_back">
+                    <div class="partition">
+                        <div class="dname">
+                            <h2>John Doe</h3>
+                        </div>
+                        
+                        <!-- <div class="icon2">
+                            <i class="fa fa-ravelry" aria-hidden="true"></i>
+                        </div> -->
+
+                        <!-- <div class="icon">
+                            <i class="fa fa-superpowers" aria-hidden="true"></i>
+                        </div> -->
+                        <div class="clogo">
+                            <i class="fa fa-anchor"></i>
+                        </div>
+                        
+                        <div class="details">
+                            <h2>To Contact</h2>
+                            <div class="dtel clearfix">
+                                <i class="fa fa-phone fl" aria-hidden="true"></i>
+                                <p class="fl">7600051835</p>
+                            </div>
+                            <div class="demail clearfix">
+                                <i class="fa fa-envelope-o fl" aria-hidden="true"></i>
+                                <p class="fl">abc@gmail.com</p>
+                            </div>
+                            <div class="dwebsite clearfix">
+                                <i class="fa fa-chrome fl" aria-hidden="true"></i>
+                                <p class="fl">https://www.weboccult.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block1"></div>
+
+
+                </div>
+            </div>
+            <button type="button" id="reset">Reset</button>
+            <button type="button" id="download">Download</button>
+        </div>
+    </div>
+</body>
+
+</html>

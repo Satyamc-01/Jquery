@@ -51,6 +51,7 @@ $(document).ready(function () {
         $('.stop,.pause').attr('disabled', true);
         $(".tag h3").empty();
         $(".tag h4").hide();
+        $(".start").show()
     });
 
     /*--------------------------Pause-------------------------------------*/
