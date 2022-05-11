@@ -84,6 +84,8 @@ $(document).ready(function () {
         else {
             $(this).closest('li').remove();
         }
+        $(".update").hide()
+        $("#add").show()
         $("select").trigger("change")
     })
 

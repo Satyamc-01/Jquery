@@ -62,8 +62,8 @@ h6 {
     width: 30%;
 }
 
-.w70 {
-    width: 70%;
+.w50 {
+    width: 50%;
 }
 
 .w100 {
@@ -81,16 +81,16 @@ h1 {
 }
 
 button {
-    padding: 2px 5px;
+    padding: 10px 10px;
     margin: 5px;
-    border: 1px solid grey;
-    background-color: darkgray;
-    border-radius: 5px;
+    border: 1px solid #463f3f;
+    border-radius: 4px;
+    background-color: #b9b9b9a6;
 }
 
 button#add,
 button.update {
-    padding: 8px 20px;
+    padding: 13px 21px;
     margin: 5px;
     border: 1px solid grey;
     border-radius: 5px;
@@ -112,14 +112,21 @@ button:hover {
 }
 
 select {
-    padding: 6px;
+    padding: 18px 3px;
     margin: 5px;
     display: block;
-    width: 35%;
+    background: aliceblue;
+    width: 25%;
 }
 li{
     padding: 5px;
 }
 p{
+    margin: 0 auto;
+}
+input#inputValue {
+    padding: 7px 10px;
+}
+ul{
     margin: 0 auto;
 }
