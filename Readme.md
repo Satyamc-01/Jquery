@@ -79,3 +79,83 @@ Bootbox plugin used.
 - when the user removes the data from the input at a same time it will also be removed from table.
 - Parent cannot be deleted if thier child exists.
 - By default one parent will always be shown on the webpage.
+
+# Task-9 Business Card Maker
+## Wizard 1: Template
+- It contains two template options for the business card. 
+- Clean (It will look like the attached example image)
+- Standard (It will look like the attached example image)
+- Clean will be selected by default.
+## Wizard 2: Theme
+- It contains three colors picker for the color theme. By default, any basic color theme is selected. You can set the same default color theme for all templates. Users can select anyone. The reset button will reset colors to default.
+- Light Color (Attach Color Picker)
+- Main Color (Attach Color Picker)
+- Dark Color (Attach Color Picker)
+- Reset Button (Set to theme color)
+## Wizard 3: Personalization
+### Display Area:
+#### Front and Back:
+- Display how the business card will look like
+- Every change must reflect on the change of every event.
+- For example, If you change the theme color then it instantly reflects at the display area.
+- By default Front and the Back area contains descriptions like “”
+
+#### Download:
+- The download button will validate the Personalization form (Wizard - 3)
+
+- If all fields are validated then it will allow the user to download PDF.
+Reset:
+- Reset button will clear all the fields in the wizard area
+
+- It will take the user to the Templates (Wizard - 1)
+
+- Reset button will clear all the designs in the display area
+
+#### Other Feature
+- QR Code: Display QR code in every card which redirects the user to the link of their website
+
+#### Clean Designs:
+
+- It should contain minimum elements.
+
+- Background color is fixed: white/black
+Standard Designs:
+- It should contain at least two shapes/graphics.
+
+- Background color must be dynamic (User can change it)
+
+- Hint - For graphics, take font-awesome icons instead of png images. So you can change the 
+color of icons easily.
+
+# Jquery Task 9: Dynamic Menu Creation
+### Features:
+- When you click on add button the element entered in the input field will be added to the right side with two buttons edit & remove. And the same value will be added in the default drop-down.
+
+- When the value is selected from dropdown and value entered from that input field, then the value will be added as sub children of the parent ( the element selected in the dropdown will be considered as parent ) in the right side. Similarly at the same time, new dropdown will be created which contains values of children.
+
+- On change of dropdown, find the sub-children and create the dropdown for the same containing proper hierarchical structure.
+
+- On edit, parent/children can be edited and then can be updated ( can't edit any other parent/children while editing ).
+
+- On remove, the element will be removed and if the element is parent then all the sub-children will be removed too.
+
+# Jquery Task 10 - Fun and Learn
+### Create a webpage to design a memory game:
+- Create a 6*4 clickable box grid as displayed in the following images
+
+- Click on any box will show a pre-defined icon.
+
+- When the user clicks on the 2nd box, match the icons. If icons are the same then display both icons and disable that box. If icons are not identical then close both boxes after 2 seconds.
+
+- Once the user opens all boxes, display the message with the time and refresh button.
+
+- The refresh button will close all boxes with new random icons. Do not refresh the page.
+#### Other Features:
+- Use font-awesome icons.
+
+- Select at least 50 icons then randomly display any 12 icons in each game.
+
+- Icon pair and location must be random in every game.
+
+- Every 12 pairs have a unique icon.
+- User can write number of blocks they want to play for.

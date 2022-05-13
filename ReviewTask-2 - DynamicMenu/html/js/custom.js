@@ -20,7 +20,6 @@ $(document).ready(function () {
                     $("#all-dropdown").append(`<select><option value='none'>Select Child</option><option value='${idIncre}'>${inputVal}</option></select>`);
                     targetEle.append(`<ul><li data-id='${idIncre}' data-text='${inputVal}'><p>${inputVal}</p> <button type="button" class="edit">edit</button><button type="button" class="delete">delete</button></li></ul>`);
                 }
-
             }
             else {
                 if ($('.parent-dropdown').val() == 'none') {
